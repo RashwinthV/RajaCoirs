@@ -4,7 +4,7 @@ const cors = require('cors');
 const connectDB = require('./Database/db');
 
 const path = require('path');
-const image = require('./routes/ImageRoutes');
+const image = require('./Routes/ImageRoutes');
 
 const app = express();
 
