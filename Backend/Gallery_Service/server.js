@@ -9,7 +9,7 @@ const image = require('./Routes/ImageRoutes');
 const app = express();
 
 const corsOptions = {
-  origin: ["http://localhost:5174","https://greenwallet-admin.onrender.com"],
+  origin: ["http://localhost:5174","https://rajacoirs.onrender.com"],
   credentials: true,
 };
 app.use(cors(corsOptions));
