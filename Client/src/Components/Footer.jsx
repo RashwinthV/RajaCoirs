@@ -8,7 +8,7 @@ import {
   FaEnvelope,
 } from "react-icons/fa";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../Styles/footer.css";
+import "../Styles/Footer.css";
 import { FaMapMarkerAlt } from "react-icons/fa";
 
 const Footer = () => {
