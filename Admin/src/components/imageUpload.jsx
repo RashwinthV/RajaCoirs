@@ -37,8 +37,7 @@ function ImageUpload() {
   };
 
   const fetchAllImages = async () => {
-      const token =
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MzZjZGE2ZjdiNjRjY2FhM2JjNjkwYyIsImVtYWlsIjoidnJhc2h3aW50aEBnbWFpbC5jb20iLCJpYXQiOjE3NDg0MjIyNjgsImV4cCI6MTc0OTAyNzA2OH0.pugPBwhW63SOF6V7GZIaAY1VnXSNLjljZ1hd7q852XQ";
+      const token ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MzZjZGE2ZjdiNjRjY2FhM2JjNjkwYyIsImVtYWlsIjoidnJhc2h3aW50aEBnbWFpbC5jb20iLCJpYXQiOjE3NDg1Mjc1MjksImV4cCI6MTc0OTEzMjMyOX0.SEx7l1EZzftscer5VXp9AHBHSyHlNTrt-aUzkesDCuU"
 
     const res = await fetch(
       `${import.meta.env.VITE_BACKEND_URL}/v2/images/getImage`,

@@ -4,11 +4,15 @@ const cors = require('cors');
 const connectDB = require('./Database/db');
 
 const path = require('path');
-const imageRoutes = require('./routes/ImageRoutes');
+const image = require('./routes/ImageRoutes');
 
 const app = express();
 
-app.use(cors()); // allow frontend requests
+const corsOptions = {
+  origin: ["http://localhost:5174","https://greenwallet-admin.onrender.com"],
+  credentials: true,
+};
+app.use(cors(corsOptions));
 app.use(express.json());
 connectDB();
 
@@ -16,7 +20,7 @@ connectDB();
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Image API routes
-app.use('/images', imageRoutes);
+app.use('/images', image);
 
 const PORT = process.env.PORT || 3002;
 app.listen(PORT, () => console.log(`Image service running on port ${PORT}`));
