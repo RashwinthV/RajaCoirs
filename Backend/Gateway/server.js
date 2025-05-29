@@ -7,7 +7,7 @@ const app = express();
 
 
 const Users = createProxyMiddleware({
-  target: "http://localhost:3001",
+  target: "https://rajacoirs-userservice.onrender.com",
   changeOrigin: true,
 });
 
