@@ -7,7 +7,7 @@ const app = express();
 
 
 const Users = createProxyMiddleware({
-  target: "http://localhost:3001",
+  target: "https://rajacoirs-userservice.onrender.com",
   changeOrigin: true,
 });
 
@@ -23,7 +23,7 @@ app.use("/v1", Users);
 app.use('/v2',gallery)
 app.use(cors());
 
-const port = process.env.port;
+const port = process.env.port||3050;
 
 app.listen(port, () => {
   console.log(`Gateway is runnning in port ${port}`);
