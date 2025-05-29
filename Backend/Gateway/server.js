@@ -25,11 +25,26 @@ const Users = createProxyMiddleware({
     }
   },
 });
-
 const gallery = createProxyMiddleware({
-  target: "http://localhost:3002",
+  target: "https://rajacoirs-gallery.onrender.com",
   changeOrigin: true,
+  onProxyRes: function (proxyRes, req, res) {
+    const allowedOrigins = [
+      "http://localhost:5173",
+      "https://rajacoirs.onrender.com"
+    ];
+    const origin = req.headers.origin;
+
+    if (allowedOrigins.includes(origin)) {
+      proxyRes.headers["Access-Control-Allow-Origin"] = origin;
+      proxyRes.headers["Access-Control-Allow-Credentials"] = "true";
+      proxyRes.headers["Access-Control-Allow-Headers"] =
+        "Origin, X-Requested-With, Content-Type, Accept, Authorization";
+      proxyRes.headers["Access-Control-Allow-Methods"] = "GET, POST, PUT, DELETE, OPTIONS";
+    }
+  },
 });
+
 
 const corsOptions = {
   origin: ["http://localhost:5173", "https://rajacoirs.onrender.com","http://localhost:5174"],
