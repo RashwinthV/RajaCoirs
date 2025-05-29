@@ -16,12 +16,16 @@ const gallery = createProxyMiddleware({
   changeOrigin: true,
 });
 
-
+const corsOptions = {
+  origin: ["http://localhost:5173", "https://rajacoirs.onrender.com"],
+  credentials: true,
+};
+app.use(cors(corsOptions));
 
 
 app.use("/v1", Users);
 app.use('/v2',gallery)
-app.use(cors());
+
 
 const port = process.env.port||3050;
 
