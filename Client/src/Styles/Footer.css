@@ -1,0 +1,24 @@
+.social-icon:hover {
+  transform: scale(1.2);
+  color: #b5e3b1;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+footer ul li a:hover {
+  text-decoration: underline;
+  color: #d4e9c4;
+}
+.custom-hr {
+  border: 1px solid white;
+  width: 90%;   
+  margin: 1rem auto;
+}
+.custom-rights{
+  margin-bottom: 0px;
+}
+
+@media(max-width:780px){
+  .custom-rights{
+    margin-bottom: 50px;
+  }
+}

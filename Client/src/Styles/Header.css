@@ -1,0 +1,40 @@
+/* App.css */
+.nav-link {
+  color: white !important;
+  transition: transform 0.2s ease, color 0.2s ease;
+  word-spacing: 5px; /* Adjust as needed */
+  letter-spacing: 0.5px; /* Optional: space between letters */
+ 
+}
+.header{
+   display: flex;
+  justify-content: space-around;
+  
+}
+.nav-link:hover {
+  transform: scale(1.1);
+  color: #fff !important;
+  text-decoration: none;
+}
+.mobile-bottom-nav a {
+  font-size: 12px;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.mobile-bottom-nav a:hover {
+  transform: scale(1.1);
+}
+
+/* .fixed-top a:hover {
+  text-decoration: underline;
+} */
+.hero{
+  margin-top: 30px;
+}
+
+@media(max-width:760px){
+  .hero{
+    margin-top: 0px;
+  }
+}

@@ -1,0 +1,12 @@
+.login-container {
+  background: #ccfacc;
+}
+
+.login-card {
+  border-left: 5px solid #28a745;
+}
+
+input:focus,
+button:focus {
+  box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+}

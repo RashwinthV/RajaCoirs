@@ -1,0 +1,14 @@
+.register-container {
+  background-color: whitesmoke;
+  border-left: 5px solid #28a745; /* olive tone for natural look */
+}
+
+h2 {
+  font-family: 'Georgia', serif;
+  color: #4b5320;
+}
+
+label {
+  font-weight: 500;
+  color: #3e4d2c;
+}
