@@ -44,7 +44,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const res = await fetch(
-        `${import.meta.env.VITE_BACKEND_URL}/v1/newuser/login`,
+        `${import.meta.env.VITE_BACKEND_URL}/newuser/login`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

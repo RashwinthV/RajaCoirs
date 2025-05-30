@@ -8,7 +8,7 @@ function Gallery() {
   const fetchAllImages = async () => {
     try {
       const res = await fetch(
-        `${import.meta.env.VITE_BACKEND_URL}/v2/images/getImage`,
+        `${import.meta.env.VITE_IMAGE_URL}/images/getImage`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

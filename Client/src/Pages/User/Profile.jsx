@@ -37,7 +37,7 @@ function Profile() {
     const email = JSON.parse(localStorage.getItem("user"))?.email;
 
     axios
-      .get(`${import.meta.env.VITE_BACKEND_URL}/v1/user/profile/${email}`, {
+      .get(`${import.meta.env.VITE_BACKEND_URL}/user/profile/${email}`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => {
@@ -61,7 +61,7 @@ function Profile() {
   const handleSave = () => {
     setSaving(true);
     axios
-      .put(`${import.meta.env.VITE_BACKEND_URL}/v1/user/Update-profile`, editableUser, {
+      .put(`${import.meta.env.VITE_BACKEND_URL}/user/Update-profile`, editableUser, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => {
