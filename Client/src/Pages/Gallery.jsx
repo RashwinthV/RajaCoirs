@@ -3,6 +3,7 @@ import "../Styles/Gallery.css";
 
 function Gallery() {
   const [allImages, setAllImages] = useState([]);
+  const [popupImg, setPopupImg] = useState(null);
   const token = localStorage.getItem("token");
 
   const fetchAllImages = async () => {
@@ -19,7 +20,6 @@ function Gallery() {
 
       const data = await res.json();
 
-      // Dynamically load each image to get size
       const imagesWithSize = await Promise.all(
         data.map((img) => {
           return new Promise((resolve) => {
@@ -34,7 +34,7 @@ function Gallery() {
               });
             };
             image.onerror = () => {
-              resolve(null); // handle broken images
+              resolve(null);
             };
           });
         })
@@ -63,11 +63,23 @@ function Gallery() {
             key={index}
             src={img.url}
             alt={img.name || `Uploaded ${index}`}
-            className="gallery-image"
+            className="gallery-image fade-in"
+            onClick={() => setPopupImg(img.url)}
             onError={() => console.error(`Image failed to load: ${img.url}`)}
           />
         ))}
       </div>
+
+      {popupImg && (
+        <div className="popup-overlay" onClick={() => setPopupImg(null)}>
+          <div className="popup-content" onClick={(e) => e.stopPropagation()}>
+            <img src={popupImg} alt="Enlarged" />
+            <button className="close-btn bg-dark  rounded-circle" onClick={() => setPopupImg(null)}>
+              &times;
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

@@ -134,7 +134,9 @@ const Footer = () => {
           <Row className=" text-md-start mt-3">
             <Col xs={12} md={4} className="mb-2">
               <p>
-                <FaEnvelope className="me-2" />  info@coirindustry.com
+                <FaEnvelope className="me-2" />  <a href="mailto:contact@example.com" className="text-light fw-bold" style={{textDecoration:"none"}}>
+                  contact@example.com
+                </a>
               </p>
             </Col>
             <Col xs={12} md={4} className="mb-2">
